@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REYANSH LUTHRA™</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+
+<!-- End Meta Pixel Code -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background:
+                radial-gradient(ellipse 60% 45% at 50% 20%, rgba(0, 255, 213, 0.06) 0%, transparent 55%),
+                #0a0c0e;
+            color: #fff;
+            padding: 40px 16px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' fill='none'%3E%3Cpath d='M-20 120C80 80 180 160 280 140C380 120 480 40 580 70C680 100 760 160 820 130' stroke='%2300FFD5' stroke-opacity='0.08' stroke-width='1'/%3E%3Cpath d='M-20 220C90 190 170 260 290 240C410 220 500 150 610 180C720 210 780 270 840 240' stroke='%2300FFD5' stroke-opacity='0.06' stroke-width='1'/%3E%3Cpath d='M-20 340C100 300 200 380 320 350C440 320 520 250 640 290C740 320 800 380 860 350' stroke='%2300FFD5' stroke-opacity='0.05' stroke-width='1'/%3E%3Cpath d='M-20 480C80 440 190 520 310 490C430 460 530 390 650 430C750 460 810 520 870 490' stroke='%2300FFD5' stroke-opacity='0.04' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+            opacity: 0.9;
+        }
+
+        .side-label {
+            position: fixed;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(0, 255, 213, 0.45);
+            z-index: 0;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            width: 100%;
+            padding: 32px 24px 26px;
+            border-radius: 28px;
+            background: rgba(12, 16, 20, 0.88);
+            border: 1px solid rgba(0, 255, 213, 0.22);
+            box-shadow:
+                0 0 40px rgba(0, 255, 213, 0.08),
+                0 24px 50px rgba(0, 0, 0, 0.45);
+            text-align: center;
+        }
+
+        .profile-wrap {
+            position: relative;
+            width: 118px;
+            height: 118px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-spinner {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: conic-gradient(#00ffd5, #00b8a0, #007a6e, #00ffd5);
+            animation: spinBorder 2.4s linear infinite;
+            box-shadow: 0 0 22px rgba(0, 255, 213, 0.4);
+        }
+
+        .profile-spinner::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border-radius: 50%;
+            background: #0c1014;
+        }
+
+        .profile-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 255, 213, 0.3);
+            animation: profilePulse 2.2s ease-out infinite;
+            pointer-events: none;
+        }
+
+        .profile {
+            width: 102px;
+            height: 102px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            border: 3px solid #0c1014;
+        }
+
+        @keyframes spinBorder {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes profilePulse {
+            0% { transform: scale(0.94); opacity: 0.75; }
+            100% { transform: scale(1.16); opacity: 0; }
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00ffd5;
+            margin-bottom: 16px;
+        }
+
+        .quote {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.92);
+            margin-bottom: 8px;
+        }
+
+        .quote .accent {
+            color: #00ffd5;
+        }
+
+        .pitch {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 22px;
+        }
+
+        .icons-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 24px;
+            padding: 0 4px;
+        }
+
+        .icon-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0, 255, 213, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00ffd5;
+            font-size: 16px;
+            box-shadow: 0 0 14px rgba(0, 255, 213, 0.12);
+            background: rgba(0, 255, 213, 0.04);
+        }
+
+        .icon-item span {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #00ffd5;
+        }
+
+        .btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 15px 18px;
+            border-radius: 999px;
+            overflow: hidden;
+            background: linear-gradient(90deg, #00ffd5 0%, #00c4a7 55%, #009e88 100%);
+            border: none;
+            color: #041512;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            box-shadow: 0 0 28px rgba(0, 255, 213, 0.35);
+            animation: jump 1.35s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .btn .tg-icon,
+        .btn .arrow {
+            font-size: 16px;
+            color: #041512;
+        }
+
+        @keyframes jump {
+            0%, 55%, 100% { transform: translateY(0); }
+            20% { transform: translateY(-12px); }
+            35% { transform: translateY(0); }
+            45% { transform: translateY(-6px); }
+        }
+
+        .timer {
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .timer span {
+            color: #00ffd5;
+            font-weight: 800;
+        }
+
+        .card-foot {
+            margin-top: 14px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(0, 255, 213, 0.7);
+        }
+
+        @media (max-width: 420px) {
+            .side-label { display: none; }
+
+            .card {
+                padding: 28px 18px 22px;
+                border-radius: 24px;
+            }
+
+            h1 { font-size: 21px; }
+            .quote { font-size: 18px; }
+
+            .btn {
+                font-size: 13px;
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="side-label">
+        <span>Raw</span>
+        <span>Session</span>
+        <span>Wicket</span>
+        <span>Winner</span>
+    </div>
+
+    <div class="wrap">
+        <div class="card">
+
+            <div class="profile-wrap">
+                <span class="profile-ring"></span>
+                <span class="profile-spinner"></span>
+                <img src="reyansh.jpg" class="profile" alt="REYANSH LUTHRA™">
+            </div>
+
+            <h1>REYANSH LUTHRA™</h1>
+            <div class="subtitle">Raw Cricket Tips</div>
+
+            <p class="quote">
+                No soft talk. Just <span class="accent">raw</span> cricket calls.
+            </p>
+            <p class="pitch">
+                Session · Wicket · Match Winner — sharp tips before the ball turns.
+            </p>
+
+            <div class="icons-row">
+                <div class="icon-item">
+                    <div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
+                    <span>Session</span>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-circle"><i class="fa-solid fa-bullseye"></i></div>
+                    <span>Wicket</span>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-circle"><i class="fa-solid fa-trophy"></i></div>
+                    <span>Winner</span>
+                </div>
+            </div>
+
+            <a class="btn" id="tg-btn" href="https://t.me/+biZlkBEFQvU5NWJl" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram-plane tg-icon"></i>
+                <span>Join Telegram</span>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+
+            <div class="timer">
+                FREE JOINING ENDS IN <span id="count">15</span>s
+            </div>
+
+            <div class="card-foot">More Than A Tip</div>
+        </div>
+    </div>
+
+    <script>
+        const TG_URL = "https://t.me/+biZlkBEFQvU5NWJl";
+
+        const btn = document.getElementById("tg-btn");
+        if (TG_URL) btn.href = TG_URL;
+
+        let time = 15;
+        const counter = document.getElementById("count");
+
+        setInterval(() => {
+            time--;
+            counter.innerText = time;
+            if (time <= 0 && TG_URL) {
+                window.location.href = TG_URL;
+            }
+            if (time <= 0) time = 0;
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
